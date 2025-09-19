@@ -5,7 +5,7 @@ const Country = ({ country }) => {
     // console.log(country)
     // console.log(country.name.common)
 
-    //handleVisit
+    //handleVisit && useState
     const [visited, setVisited] = useState(false)
     const handleVisit = () => {
         // setVisited(true)
@@ -27,7 +27,7 @@ const Country = ({ country }) => {
             <h3>Name: {country.name.common}</h3>
             <h4>Population: {country.population.population}</h4>
             <h5>Area: {country.area.area}</h5>
-            <button onClick={handleVisit}>{visited ? 'Visited' : 'Not visited'}</button>
+            <button className={`${visited && 'country-visited'}` } onClick={handleVisit}>{visited ? 'Visited' : 'Not visited'}</button>
         </div>
     );
 };
